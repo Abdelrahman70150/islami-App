@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:islami/const/constan.dart';
 import 'package:islami/sura_arg.dart';
 
+
 class SuraDetailsScreen extends StatefulWidget {
 static const String routName = 'suraDetails';
 
@@ -72,17 +73,20 @@ List verse =[];
                             child: Text(
                               '${verse[index]} (${index+1})',
                       style: TextStyle(
-                      fontSize: 20
-                    ),
+                     fontSize: 20,
+                      ),
                     textAlign: TextAlign.center,
                   ),
                           ),
                         )),
-                    itemCount: verse.length,separatorBuilder: (context,index)=>Divider(
+                    itemCount: verse.length,
+                          separatorBuilder: (context,index)=>
+                              Divider(
                         thickness: 1,color: mainColor,
                             endIndent: 20,
                             indent: 20,
-                    ),),
+                    ),
+                        ),
                       ),
 
                 ],

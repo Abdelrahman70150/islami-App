@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/screens/sura_details_screen.dart';
 import 'package:islami/sura_arg.dart';
 
@@ -57,10 +58,10 @@ class _QuranScreenState extends State<QuranScreen> {
               width: 2,
               color: mainColor,
             ),
-            const Center(
+             Center(
               child: Text(
                 'اسم السورة',
-                style: TextStyle(
+                style: GoogleFonts.abel(
                   fontSize: 25,
                 ),
               ),
