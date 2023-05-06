@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/const/constan.dart';
 import 'package:islami/screens/hadeth_screen/hadeth_screen.dart';
 import 'package:islami/screens/quran_screen/quran_screen.dart';
@@ -33,9 +34,9 @@ class _LayoutScreenState extends State<LayoutScreen> {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text(
+          title:  Text(
             'إسلامي',
-            style: const TextStyle(
+            style:  GoogleFonts.elMessiri(
             fontSize: 30,
             fontWeight: FontWeight.bold,
             color: Colors.black,
@@ -80,7 +81,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
                   ),
                   size: 30,
                 ),
-                label: 'الأحاديث'
+                label: 'الأحاديث',
             ),
             BottomNavigationBarItem(
                 icon: ImageIcon(

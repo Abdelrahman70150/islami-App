@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/const/constan.dart';
 import 'package:islami/sura_arg.dart';
 
@@ -53,9 +54,9 @@ List verse =[];
                 children: [
                   Text(
                     'سورة ${args.suraName}',
-                    style: TextStyle(
-                      fontSize:25,
-                      fontWeight: FontWeight.bold
+                    style: GoogleFonts.elMessiri(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold
                     ),
 
                   ),
@@ -72,8 +73,8 @@ List verse =[];
                             textDirection: TextDirection.rtl,
                             child: Text(
                               '${verse[index]} (${index+1})',
-                      style: TextStyle(
-                     fontSize: 20,
+                      style: GoogleFonts.elMessiri(
+                        fontSize: 20,
                       ),
                     textAlign: TextAlign.center,
                   ),

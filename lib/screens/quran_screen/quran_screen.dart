@@ -44,16 +44,16 @@ class _QuranScreenState extends State<QuranScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            const Center(
+             Center(
               child: Text(
                 'عدد الآيات',
-                style: TextStyle(
+                style:GoogleFonts.elMessiri(
                   fontSize: 25,
                 ),
               ),
             ),
             Container(
-              margin: const EdgeInsets.only(left:20),
+              margin: const EdgeInsets.only(left:18),
               height: 44,
               width: 2,
               color: mainColor,
@@ -61,7 +61,7 @@ class _QuranScreenState extends State<QuranScreen> {
              Center(
               child: Text(
                 'اسم السورة',
-                style: GoogleFonts.abel(
+                style: GoogleFonts.elMessiri(
                   fontSize: 25,
                 ),
               ),
@@ -89,9 +89,9 @@ class _QuranScreenState extends State<QuranScreen> {
                   Expanded(
                     child: Text(
                       soraLength[index].toString(),
-                      style: const TextStyle(
+                      style:  GoogleFonts.elMessiri(
                         fontSize: 25,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.bold
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -104,10 +104,9 @@ class _QuranScreenState extends State<QuranScreen> {
                   Expanded(
                     child: Text(
                       soraName[index],
-                      style: const TextStyle(
-                        fontSize: 25,
+                      style:  GoogleFonts.elMessiri(
+                          fontSize: 25,
                           fontWeight: FontWeight.bold
-
                       ),
                       textAlign: TextAlign.center,
                     ),
