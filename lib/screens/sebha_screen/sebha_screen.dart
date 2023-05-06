@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/const/constan.dart';
 
 class SebhaScreen extends StatefulWidget {
@@ -21,7 +22,7 @@ class _SebhaScreenState extends State<SebhaScreen> {
           //number of tasbeh text
           Text(
             'عدد التسبيحات',
-            style: TextStyle(
+            style:  GoogleFonts.elMessiri(
               fontSize: 25,
               fontWeight: FontWeight.w500,
             ),
@@ -38,7 +39,7 @@ class _SebhaScreenState extends State<SebhaScreen> {
             child: Center(
               child: Text(
                 '${tasbehCount}',
-                style: TextStyle(
+                style: GoogleFonts.elMessiri(
                   fontSize: 25,
                   fontWeight: FontWeight.bold
                 ),
@@ -63,7 +64,7 @@ class _SebhaScreenState extends State<SebhaScreen> {
               child: Center(
                 child: Text(
                   'سبحان الله',
-                  style: TextStyle(
+                  style:  GoogleFonts.elMessiri(
                     color: Colors.white,
                       fontSize: 25,
                       fontWeight: FontWeight.bold
