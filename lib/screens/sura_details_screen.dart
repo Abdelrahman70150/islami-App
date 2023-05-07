@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/const/constan.dart';
-import 'package:islami/sura_arg.dart';
+import 'package:islami/arg/sura_arg.dart';
 
 
 class SuraDetailsScreen extends StatefulWidget {
@@ -60,13 +60,22 @@ List verse =[];
                     ),
 
                   ),
+                  Divider(
+                    thickness: 1,
+                  color: mainColor,
+                  endIndent: 90,
+                  indent: 90,
+                  ),
+                  verse.isEmpty? Center(child: CircularProgressIndicator(color: mainColor,))
                   const Divider(thickness: 1,
                   color: mainColor,
                   endIndent: 90,
                   indent: 90,),
                   verse.isEmpty? const Center(child: CircularProgressIndicator(color: mainColor,))
                       :Expanded(
-                        child: ListView.separated(itemBuilder: (context, index) => Center(
+                        child: ListView.separated(
+                          physics: BouncingScrollPhysics(),
+                          itemBuilder: (context, index) => Center(
                             child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 18.0),
                           child: Directionality(

@@ -9,6 +9,14 @@ class RadioScreen extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+
+        Image.asset('assets/images/radio_image.png'),
+        SizedBox(height: 74,),
+        Text('إذاعة القرآن الكريم',
+        style: GoogleFonts.elMessiri(
+          fontSize: 25
+        ),),
+
         Image.asset(
             'assets/images/radio_image.png'
         ),
@@ -24,6 +32,16 @@ class RadioScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconButton(onPressed: (){},
+
+                icon: Icon(
+                  Icons.skip_previous,
+                  color: mainColor,
+                ),
+              iconSize: 40,
+              alignment: AlignmentDirectional.center,
+            ),
+            IconButton(onPressed: (){},
+
               icon: Icon(
                 Icons.skip_previous,
                 color: mainColor,

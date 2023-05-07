@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/screens/sura_details_screen.dart';
-import 'package:islami/sura_arg.dart';
+import 'package:islami/arg/sura_arg.dart';
 
 import '../../const/constan.dart';
 
