@@ -66,7 +66,7 @@ List verse =[];
                   endIndent: 90,
                   indent: 90,
                   ),
-                  verse.isEmpty? Center(child: CircularProgressIndicator(color: mainColor,))
+                  verse.isEmpty? Center(child: CircularProgressIndicator(color: mainColor,)):
                   const Divider(thickness: 1,
                   color: mainColor,
                   endIndent: 90,
