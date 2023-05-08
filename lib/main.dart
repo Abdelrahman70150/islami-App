@@ -16,6 +16,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+
       routes: {
         // SplashScreen.routName: (context)=>SplashScreen(),
         LayoutScreen.routName: (context)=>LayoutScreen(),
@@ -25,7 +27,6 @@ class MyApp extends StatelessWidget {
       initialRoute: LayoutScreen.routName,
 
       theme:MyThemeData.lightTheme,
-
 
     );
   }
