@@ -79,7 +79,7 @@ void loadFile(){
     //   SingleAhadethLines.removeAt(0);
     //   // بقيت الحديث من غير التايتل
     //   List<String> content =SingleAhadethLines;
-      HadethModel hadethModel =    HadethModel(content: content, hadethName: title);
+      HadethModel hadethModel = HadethModel(content: content, hadethName: title);
       allAhadeth.add(hadethModel);
 
     setState(() {
