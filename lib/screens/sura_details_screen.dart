@@ -67,6 +67,11 @@ List verse =[];
                   indent: 90,
                   ),
                   verse.isEmpty? Center(child: CircularProgressIndicator(color: mainColor,))
+                  const Divider(thickness: 1,
+                  color: mainColor,
+                  endIndent: 90,
+                  indent: 90,),
+                  verse.isEmpty? const Center(child: CircularProgressIndicator(color: mainColor,))
                       :Expanded(
                         child: ListView.separated(
                           physics: BouncingScrollPhysics(),
@@ -86,7 +91,7 @@ List verse =[];
                         )),
                     itemCount: verse.length,
                           separatorBuilder: (context,index)=>
-                              Divider(
+                              const Divider(
                         thickness: 1,color: mainColor,
                             endIndent: 20,
                             indent: 20,
