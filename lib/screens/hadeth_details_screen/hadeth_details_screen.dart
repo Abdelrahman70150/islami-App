@@ -2,17 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/arg/hadeth_arg.dart';
 import 'package:islami/const/constan.dart';
+import 'package:islami/providers/settings_provider/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class HadethDetailsScreen extends StatelessWidget {
   static const String routName = 'hadethDetails';
   @override
   Widget build(BuildContext context) {
     var args =ModalRoute.of(context)?.settings.arguments as HadethModel;
+    var provider = Provider.of<SettingsProvider>(context);
     return Container(
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-              'assets/images/default_bg.png',
+            provider.getBackgroundImage(context),
             ),
           )
       ),
@@ -24,11 +27,12 @@ class HadethDetailsScreen extends StatelessWidget {
           ),
           body: Center(
             child: Card(
-              color: Colors.white.withOpacity(.40),
+              color:Brightness.light == Theme.of(context).brightness?
+              Colors.white.withOpacity(.40):mainDarkColor.withOpacity(.4),
               elevation: 1000 ,
               shape: RoundedRectangleBorder(
                 side: BorderSide(
-                  color: mainColor.withOpacity(.2),
+                  color: mainLightColor.withOpacity(.2),
                 ),
                 borderRadius: BorderRadius.circular(25),
               ),
@@ -44,9 +48,7 @@ class HadethDetailsScreen extends StatelessWidget {
                     child: Center(
                       child: Text(
                         args.content,
-                        style: GoogleFonts.elMessiri(
-                          fontSize: 20,
-                        ),
+                        style: Theme.of(context).textTheme.bodySmall,
                         textAlign: TextAlign.center,
                       ),
                     ),

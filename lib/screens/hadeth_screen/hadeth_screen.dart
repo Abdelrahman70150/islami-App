@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/arg/hadeth_arg.dart';
 import 'package:islami/const/constan.dart';
 import 'package:islami/screens/hadeth_details_screen/hadeth_details_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 class HadethScreen extends StatefulWidget {
@@ -24,15 +25,17 @@ class _HadethScreenState extends State<HadethScreen> {
         Image.asset('assets/images/hadeth_logo.png'),
       Divider(
         thickness: 1,
-        color: mainColor,
+        color:Brightness.light == Theme.of(context).brightness?
+      mainLightColor: yellowDarkColor,
       ),
-      Text('الأحاديث',
-      style: GoogleFonts.elMessiri(
-        fontSize: 25,
-      ),),
+      Text(
+    AppLocalizations.of(context)!.praise,
+      style: Theme.of(context).textTheme.bodyLarge
+      ),
         Divider(
           thickness: 1,
-          color: mainColor,
+          color: Brightness.light == Theme.of(context).brightness?
+          mainLightColor: yellowDarkColor,
         ),
         Expanded(
           child: ListView.separated(
@@ -47,10 +50,10 @@ class _HadethScreenState extends State<HadethScreen> {
             child: Text(
              allAhadeth[index].hadethName,
             textAlign: TextAlign.center,
-            style: GoogleFonts.elMessiri(
-              fontSize: 25,
-              fontWeight: FontWeight.bold
-            ),),
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
           itemCount: allAhadeth.length,
           separatorBuilder: (contex,index)=>SizedBox(

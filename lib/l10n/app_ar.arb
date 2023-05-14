@@ -1,0 +1,18 @@
+{
+  "islami": "إسلامي",
+  "chapterName": "اسم السورة",
+  "numberOfVerses": "عدد الآيات",
+  "quran": "القرآن",
+  "hadith": "الأحاديث",
+  "praise": "التسبيح",
+  "radio": "الراديو",
+  "settings": "الأعدادات",
+  "numberOfPraises": "عدد التسبيحات",
+  "theme": "السمات",
+  "dark": "داكن",
+  "light": "فاتح",
+  "language": "اللغه",
+  "arabic": "العربية",
+  "english": "English",
+  "broadcastingTheHolyQuran": "إذاعة القرآن الكريم"
+}
