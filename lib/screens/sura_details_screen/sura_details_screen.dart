@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/const/constan.dart';
 import 'package:islami/arg/sura_arg.dart';
+import 'package:islami/providers/settings_provider/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   static const String routName = 'suraDetails';
@@ -16,31 +18,35 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var providre =Provider.of<SettingsProvider>(context);
     SuraArgs args = ModalRoute.of(context)?.settings.arguments as SuraArgs;
     if (verse.isEmpty) {
       loadFile(args.index);
     }
 
     return Container(
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
           image: DecorationImage(
         image: AssetImage(
-          'assets/images/default_bg.png',
+          Brightness.dark == Theme.of(context).brightness?
+          'assets/images/dark_bg.png': 'assets/images/default_bg.png',
         ),
       )),
       child: Scaffold(
           appBar: AppBar(
-            title: Text(
-              args.suraName,
+            centerTitle: true,
+            title:  Text(
+              'إسلامي',
             ),
           ),
           body: Center(
             child: Card(
-              color: Colors.white.withOpacity(.40),
+              color:Brightness.light == Theme.of(context).brightness?
+              Colors.white.withOpacity(.40):mainDarkColor.withOpacity(.4),
               elevation: 1000,
               shape: RoundedRectangleBorder(
                 side: BorderSide(
-                  color: mainColor.withOpacity(.2),
+                  color: mainLightColor.withOpacity(.2),
                 ),
                 borderRadius: BorderRadius.circular(25),
               ),
@@ -52,19 +58,20 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                     children: [
                       Text(
                         'سورة ${args.suraName}',
-                        style: GoogleFonts.elMessiri(
-                            fontSize: 25, fontWeight: FontWeight.bold),
+                        style:Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold,
+                        color: Brightness.light == Theme.of(context).brightness? Colors.black: yellowDarkColor),
                       ),
                       Divider(
                         thickness: 1,
-                        color: mainColor,
+                        color: Brightness.light==Theme.of(context).brightness?
+                        mainLightColor:yellowDarkColor,
                         endIndent: 90,
                         indent: 90,
                       ),
                       verse.isEmpty
                           ? const Center(
                               child: CircularProgressIndicator(
-                              color: mainColor,
+                              color: mainLightColor,
                             ))
                           : Expanded(
                               child: ListView.separated(
@@ -77,18 +84,17 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                                     textDirection: TextDirection.rtl,
                                     child: Text(
                                       '${verse[index]} (${index + 1})',
-                                      style: GoogleFonts.elMessiri(
-                                        fontSize: 20,
-                                      ),
+                                      style:Theme.of(context).textTheme.bodySmall,
                                       textAlign: TextAlign.center,
                                     ),
                                   ),
                                 )),
                                 itemCount: verse.length,
                                 separatorBuilder: (context, index) =>
-                                    const Divider(
+                                     Divider(
                                   thickness: 1,
-                                  color: mainColor,
+                                      color: Brightness.light==Theme.of(context).brightness?
+                                      mainLightColor:yellowDarkColor,
                                   endIndent: 20,
                                   indent: 20,
                                 ),

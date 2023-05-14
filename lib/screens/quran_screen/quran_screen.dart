@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:islami/screens/sura_details_screen.dart';
+import 'package:islami/screens/sura_details_screen/sura_details_screen.dart';
 import 'package:islami/arg/sura_arg.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../const/constan.dart';
 
 class QuranScreen extends StatefulWidget {
@@ -39,39 +39,46 @@ class _QuranScreenState extends State<QuranScreen> {
         Container(
           width: double.infinity,
           height: 1,
-          color: mainColor,
+          color: Brightness.light == Theme.of(context).brightness?
+          mainLightColor: yellowDarkColor,
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-             Center(
-              child: Text(
-                'عدد الآيات',
-                style:GoogleFonts.elMessiri(
-                  fontSize: 25,
-                ),
+             Container(
+               width:200,
+               child: Center(
+                 child: Text(
+                   AppLocalizations.of(context)!.numberOfVerses,
+                   style:Theme.of(context).textTheme.bodyLarge,
+                 ),
+               ),
+             ),
+            Center(
+              child: Container(
+
+                height: 44,
+                width: 2,
+                  color: Brightness.light == Theme.of(context).brightness?
+                  mainLightColor: yellowDarkColor,
               ),
             ),
-            Container(
-              margin: const EdgeInsets.only(left:18),
-              height: 44,
-              width: 2,
-              color: mainColor,
-            ),
-             Center(
-              child: Text(
-                'اسم السورة',
-                style: GoogleFonts.elMessiri(
-                  fontSize: 25,
-                ),
-              ),
-            ),
+             Container(
+               width:190,
+               child: Center(
+                 child: Text(
+            AppLocalizations.of(context)!.chapterName,
+                   style:Theme.of(context).textTheme.bodyLarge,
+                 ),
+               ),
+             ),
           ],
         ),
         Container(
           width: double.infinity,
           height: 1,
-          color: mainColor,
+            color: Brightness.light == Theme.of(context).brightness?
+            mainLightColor: yellowDarkColor,
         ),
         Expanded(
           child: ListView.builder(
@@ -84,31 +91,36 @@ class _QuranScreenState extends State<QuranScreen> {
                 );
               },
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Expanded(
-                    child: Text(
-                      soraLength[index].toString(),
-                      style:  GoogleFonts.elMessiri(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold
+                  Container(
+                    width: 200,
+                    child: Center(
+                      child: Text(
+                        soraLength[index].toString(),
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          fontWeight: FontWeight.bold
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Center(
+                    child: Container(
+                      height: 45,
+                      width: 2,
+                      color: Brightness.light == Theme.of(context).brightness?
+                    mainLightColor: yellowDarkColor,
                     ),
                   ),
                   Container(
-                    height: 45,
-                    width: 2,
-                    color: mainColor,
-                  ),
-                  Expanded(
-                    child: Text(
-                      soraName[index],
-                      style:  GoogleFonts.elMessiri(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold
+                    width: 190,
+                    child: Center(
+                      child: Text(
+                        soraName[index],
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
                     ),
                   ),
                 ],

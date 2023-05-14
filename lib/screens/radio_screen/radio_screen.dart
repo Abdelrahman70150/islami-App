@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/const/constan.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class RadioScreen extends StatelessWidget {
 
@@ -11,10 +13,9 @@ class RadioScreen extends StatelessWidget {
       children: [
         Image.asset('assets/images/radio_image.png'),
         SizedBox(height: 74,),
-        Text('إذاعة القرآن الكريم',
-        style: GoogleFonts.elMessiri(
-          fontSize: 25
-        ),),
+        Text(
+            AppLocalizations.of(context)!.broadcastingTheHolyQuran,
+        style:Theme.of(context).textTheme.bodyLarge),
         SizedBox(height: 65,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -23,7 +24,8 @@ class RadioScreen extends StatelessWidget {
 
               icon: Icon(
                 Icons.skip_previous,
-                color: mainColor,
+                color:  Brightness.light == Theme.of(context).brightness?
+                mainLightColor: yellowDarkColor,
               ),
               iconSize: 40,
               alignment: AlignmentDirectional.center,
@@ -32,7 +34,8 @@ class RadioScreen extends StatelessWidget {
               onPressed: (){},
               icon: Icon(
                 Icons.play_arrow,
-                color: mainColor,
+                color:  Brightness.light == Theme.of(context).brightness?
+                mainLightColor: yellowDarkColor,
               ),
               iconSize: 55,
               alignment: AlignmentDirectional.center,
@@ -41,7 +44,8 @@ class RadioScreen extends StatelessWidget {
             IconButton(onPressed: (){},
               icon: Icon(
                 Icons.skip_next,
-                color: mainColor,
+                color:  Brightness.light == Theme.of(context).brightness?
+                mainLightColor: yellowDarkColor,
               ),
               iconSize: 40,
               alignment: AlignmentDirectional.center,
