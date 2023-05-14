@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/screens/sura_details_screen/sura_details_screen.dart';
 import 'package:islami/arg/sura_arg.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -37,6 +36,7 @@ class _QuranScreenState extends State<QuranScreen> {
           child: Image.asset('assets/images/qur2an_screen_logo.png'),
         ),
         Container(
+          //width
           width: double.infinity,
           height: 1,
           color: Brightness.light == Theme.of(context).brightness?
