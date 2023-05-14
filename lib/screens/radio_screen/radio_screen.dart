@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/const/constan.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami/providers/settings_provider/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 
 class RadioScreen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -23,7 +24,8 @@ class RadioScreen extends StatelessWidget {
             IconButton(onPressed: (){},
 
               icon: Icon(
-                Icons.skip_previous,
+                provider.languageCode=='ar'?
+                Icons.skip_next: Icons.skip_previous,
                 color:  Brightness.light == Theme.of(context).brightness?
                 mainLightColor: yellowDarkColor,
               ),
@@ -43,7 +45,8 @@ class RadioScreen extends StatelessWidget {
             ),
             IconButton(onPressed: (){},
               icon: Icon(
-                Icons.skip_next,
+                provider.languageCode=='ar'?
+                Icons.skip_previous:Icons.skip_next,
                 color:  Brightness.light == Theme.of(context).brightness?
                 mainLightColor: yellowDarkColor,
               ),
