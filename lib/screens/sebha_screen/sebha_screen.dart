@@ -6,6 +6,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SebhaScreen extends StatefulWidget {
 
+
   @override
   State<SebhaScreen> createState() => _SebhaScreenState();
 }
@@ -41,7 +42,7 @@ class _SebhaScreenState extends State<SebhaScreen> {
             ),
             child: Center(
               child: Text(
-                '${tasbehCount}',
+                '$tasbehCount',
                 style: GoogleFonts.elMessiri(
                   fontSize: 25,
                   fontWeight: FontWeight.bold
